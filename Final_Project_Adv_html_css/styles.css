@@ -32,6 +32,8 @@ nav {
     background-color: #363232;
     padding: 0.3rem;
     border-radius: 1rem;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul {
@@ -43,11 +45,25 @@ nav li {
     display: inline-block;
     margin-right: 1rem;
     font-size: 1.5rem;
+
 }
 
-nav li a:link {
+nav li a:link, nav li a:visited {
     text-decoration: none;
     color: #edefee;
+}
+
+nav li a:hover, nav li a:active {
+    background-color: #edefee;
+    color: #363232;
+    padding: 0.7rem;
+    border-radius: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+    section {   
+      flex-direction: column;
+    }
 }
 
 section {
@@ -56,21 +72,99 @@ section {
 
 article {
     flex: 1;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: #363232;
+    background-color: #fff;
+    margin: 1rem;
 }
-
-/* main:first-child {
-    padding: 200px;
-} */
 
 .main-heading {
     background-image: url("heading1.webp");
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 footer {
+    margin: 2rem;
     display: flex;
 }
 
 footer div {
     flex: 1;
 }
+
+.copyright {
+    text-align: right;
+    border: #363232;
+}
+
+article a {
+    padding: 0.5rem;
+    background-color: #363232;
+    border-radius: 0.5rem;
+    color: #edefee;
+    text-decoration: none;
+}
+
+article a:link, article a:visited {
+    color: #edefee;
+}
+
+article a:hover, article a:active {
+    background-color: #edefee;
+    color: #363232;
+}
+
+main section:first-child article p {
+    width: 50%;
+}
+
+.info-article {
+    background-image: url("info-bg.webp");
+    background-size: 100% 100%;
+}
+
+input, textarea, button {
+    border-radius: 0.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: #363232;
+    font-size: 1.5rem
+}
+
+label {
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 20%;
+    max-width: 25%;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 90%;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
